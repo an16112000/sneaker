@@ -1,11 +1,11 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import "./index.css";
-import App from "./App";
-import reportWebVitals from "./reportWebVitals";
-import "../src/GlobalStyles/globalStyles.scss";
 import { SWRConfig } from "swr";
-import { instance, instanceKream } from "./services";
+import "../src/GlobalStyles/globalStyles.scss";
+import App from "./App";
+import "./index.css";
+import reportWebVitals from "./reportWebVitals";
+import { instanceKream } from "./services";
 
 const fetcher = (url, init) => instanceKream.get(url, init);
 

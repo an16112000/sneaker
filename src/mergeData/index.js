@@ -39,8 +39,6 @@ const snkrDunk = async (submitCode) => await getData(submitCode);
 const kream = async (submitCode) => await getSizeAndSkuFromKream(submitCode);
 
 async function getDataForMenu(submitCode) {
-  let dataKor;
-  let dataJp;
   let data;
   await Promise.all([
     soldOut(submitCode),
@@ -67,8 +65,8 @@ export const mergeData = async (submitCode = "") => {
   if (dataKor && dataJp) {
     console.log(1);
     data = merge(dataKor.price, dataJp.price, dataKream);
-    data.map((item) => {
-      if (item.isSnkrDunkPriceOk == true) {
+    data.forEach((item) => {
+      if (item.isSnkrDunkPriceOk === true) {
         isSnkrDunkOk = true;
       }
     });
