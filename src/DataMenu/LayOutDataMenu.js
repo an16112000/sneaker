@@ -3,7 +3,7 @@ import { getDataMenu } from "./getDataMenu";
 import styles from './LayOutDataMenu.module.scss'
 import { Link, useParams } from "react-router-dom";
 
-const LayOutDataMenu = ({ type, pageNumber, typeOfProduct, handlePreviousPage, filter }) => {
+const LayOutDataMenu = ({ type, pageNumber, typeOfProduct, filter }) => {
     const [data, setData] = useState([])
     const [page, setPage] = useState(1)
     const params = useParams()
@@ -11,7 +11,7 @@ const LayOutDataMenu = ({ type, pageNumber, typeOfProduct, handlePreviousPage, f
     useEffect(
         () => {
             const fetchApi = async () => {
-                const response = await getDataMenu(type, pageNumber, filter);
+                const response = await getDataMenu(type, pageNumber);
                 setData(response)
             }
             fetchApi();
@@ -44,8 +44,7 @@ const LayOutDataMenu = ({ type, pageNumber, typeOfProduct, handlePreviousPage, f
                 data.map(
                     (item, index) => {
                         if(item.code === undefined) {
-                            console.log(123)
-                            return
+                            return <></>;
                         }
                         return <Link to={`/product/${item.code}/size`} key={index} className={styles.item}>
                             <img src={item.img} alt={item.code} />

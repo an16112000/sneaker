@@ -1,13 +1,11 @@
 import { VND } from "../changeCurrency/changeCurrency";
-import { getRateJp, getRateKor } from "../rate"
-import { instance, instanceKream } from "../services"
-import {getSalesHistorySNKRDUNK} from '../getDataFromSNKRDUNK/getSalesHistorySNKRDUNK'
-import { mergeData } from '../mergeData'
+import { mergeData } from '../mergeData';
+import { getRateKor } from "../rate";
+import { instance } from "../services";
 
-export const getDataMenu = async (type, page, filter) => {
+export const getDataMenu = async (type, page) => {
     const response = await instance.get(`https://www.soldout.co.kr/api/v3/search/get-item-list?&typeGb=goods&pageIndex=${page}&pageSize=12&keyword=${type}`)
     const rateKor = await getRateKor();
-    const rateJp = await getRateJp();
     const data = response.data.data.product_info.list.map(
         (item) => {
             for (let i = 0; i < item.model_no.length; i++) {
@@ -90,18 +88,18 @@ export const getDataMenu = async (type, page, filter) => {
             return arrKor[i]
         }
     }
-    if(filter) {
-        arrKor.forEach(
-            (item, index) => {
-                if(item.isSnkrDunkOk === false) {
-                    // console.log(index)
-                    arrKor[index] = []
-                    // arrKor.splice(index, 1)
-                    // console.log(arrKor.length)
-                    // console.log(arrKor)
-                }
-            }
-        )
-    }
+    // if(filter) {
+    //     arrKor.forEach(
+    //         (item, index) => {
+    //             if(item.isSnkrDunkOk === false) {
+    //                 // console.log(index)
+    //                 arrKor[index] = []
+    //                 // arrKor.splice(index, 1)
+    //                 // console.log(arrKor.length)
+    //                 // console.log(arrKor)
+    //             }
+    //         }
+    //     )
+    // }
     return arrKor
 }
