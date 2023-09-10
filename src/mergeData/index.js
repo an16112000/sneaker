@@ -11,7 +11,6 @@ function merge(data1, data2, data3) {
       if (item1.size === item2.size) {
         data3.forEach((item3) => {
           if (item2.size === item3.size) {
-            console.log(item1.size, Math.floor(item2.price) - (1.36*Math.floor(item3.price)+820000))
             if (Math.floor(item2.price) - (1.36*Math.floor(item3.price)+820000) > 0 && item3.price !== 0) {
               isSnkrDunkPriceOk = true;
             }
@@ -24,6 +23,7 @@ function merge(data1, data2, data3) {
               priceJp: VND.format(Math.floor(item2.price)),
               priceKream: VND.format(Math.floor(item3.price)),
               isSnkrDunkPriceOk: isSnkrDunkPriceOk,
+              listItemCountMap: item2.listItemCountMap
             };
           }
         });
@@ -63,7 +63,6 @@ export const mergeData = async (submitCode = "") => {
   const { dataKor, dataJp, dataKream } = props;
   let data;
   if (dataKor && dataJp) {
-    console.log(1);
     data = merge(dataKor.price, dataJp.price, dataKream);
     data.forEach((item) => {
       if (item.isSnkrDunkPriceOk === true) {

@@ -20,7 +20,6 @@ function Layout({ submitCode, size }) {
             fetchData()
         }, [submitCode, size]
         )
-        console.log(data)
     return (
         <div className={styles.container}>
 
@@ -56,7 +55,10 @@ function Layout({ submitCode, size }) {
                                                 <td>{item.size}</td>
                                                 <td className={clsx(styles.td)}>{item.priceSoldOut}</td>
                                                 <td className={clsx(styles.td)}>{item.priceKream}</td>
-                                                <td className={clsx(styles.td)}>{item.priceJp}</td>
+                                                <td className={clsx(styles.td)}>
+                                                    {item.priceJp}
+                                                    <span style={{marginLeft: '10px'}}>({item.listItemCountMap})</span>
+                                                </td>
                                             </tr>
                                         </tbody>
                                     }

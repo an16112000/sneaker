@@ -21,7 +21,7 @@ export const instanceKreamWithToken = axios.create({
         'X-Kream-Api-Version': '20',
         'X-Kream-Client-Datetime': '20230728191518+0700',
         'X-Kream-Device-Id': 'web;73522a0f-986b-487e-bd41-cbcddf57bf4d',
-        'Authorization': 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2OTMzMjAxMjYsIm5iZiI6MTY5MzMyMDEyNiwianRpIjoiNjYzMjIwN2MtMjU0Yy00YzM3LTk3YTctYTlmMDRmMDMwM2U5IiwiZXhwIjoxNjkzMzI3MzI2LCJpZGVudGl0eSI6MjQ2MTQ4NywiZnJlc2giOnRydWUsInR5cGUiOiJhY2Nlc3MiLCJ1YyI6eyJzYWZlIjp0cnVlfSwiY3NyZiI6IjYwMTUwM2QyLTY1Y2MtNGVkMy1iMWQyLTY0N2I2MGU2ZjkzZiJ9.pk-9yGuPyAKwN8M1VeFD9Qpm9w7pwXtOdUKLYbadU60'
+        'Authorization': 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2OTQxODU2MzQsIm5iZiI6MTY5NDE4NTYzNCwianRpIjoiNDNlYThjMTgtYzQwOC00ODNjLWEwNzAtN2JmMzhjZGY5NWUwIiwiZXhwIjoxNjk0MTkyODM0LCJpZGVudGl0eSI6MjQ2MTQ4NywiZnJlc2giOnRydWUsInR5cGUiOiJhY2Nlc3MiLCJ1YyI6eyJzYWZlIjp0cnVlfSwiY3NyZiI6IjFkZjc4ZTllLTZiYjItNGFhMi04YzY1LWU4YmEyMzQzYTk0NyJ9.6-d2ST3a7unsrPl7picp86G2xUNpZ-NHS8hLJjQPxSg'
     }
 })
 
