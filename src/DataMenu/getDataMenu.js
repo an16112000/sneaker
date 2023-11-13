@@ -85,7 +85,7 @@ export const getDataMenu = async (type, page) => {
                 // isKreamOk: isKreamOk
             }
         } catch(msg) {
-            return arrKor[i]
+            return arrKor
         }
     }
     // if(filter) {

@@ -8,7 +8,7 @@ export const instance = axios.create({
 
 export const instanceKream = axios.create({
     headers: {
-        'X-Kream-Api-Version': '20',
+        'X-Kream-Api-Version': '21',
         'X-Kream-Client-Datetime': '20230728191518+0700',
         'X-Kream-Device-Id': 'web;73522a0f-986b-487e-bd41-cbcddf57bf4d',
         'Appkey': 'JAkSzosy4X7K2FvPBwut5GN0At8DFuIwdhfs1dvr'

@@ -37,7 +37,6 @@ const LayOutDataMenu = ({ type, pageNumber, typeOfProduct, filter }) => {
             behavior: `smooth`
         })
     }
-    console.log(data)
     return (
         <div className={styles.menu}>
             {   

@@ -11,7 +11,7 @@ export const getSizeAndSkuFromKream = async (submitCode) => {
         (item) => {
             return {
                 size: parseInt(item.option),
-                price: item.lowest_ask*rate
+                price: item.normal*rate
             }
         }
     )
